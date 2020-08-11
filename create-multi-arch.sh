@@ -10,4 +10,4 @@ docker manifest inspect quay.io/rpsene/multi-arch-image
 docker login quay.io -u "$USER" -p $TOKEN
 
 
-docker manifest push quay.io/rpsene/multi-arch-image:latest
+docker manifest push quay.io/rpsene/multi-arch-image
