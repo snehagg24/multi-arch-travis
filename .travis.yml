@@ -15,8 +15,7 @@ jobs:
      #script: docker push quay.io/rpsene/multi-arch-travis:amd64
    - os: linux
      arch: ppc64le
-     script: docker build -t container/ppc64le -f ./ppc64le/Dockerfile .
-     script: docker tag container/ppc64le quay.io/rpsene/multi-arch-travis:ppc64le; docker images
+     script: docker build -t container/ppc64le -f ./ppc64le/Dockerfile .; docker images; docker tag container/ppc64le quay.io/rpsene/multi-arch-travis:ppc64le; docker images
      #script: docker login quay.io -u "$USER" -p $TOKEN
      #script: docker images
      #script: docker push quay.io/rpsene/multi-arch-travis:ppc64le
