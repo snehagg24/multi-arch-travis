@@ -4,7 +4,7 @@
 
 echo '{"storage-driver": "overlay2", "registry-mirrors": ["https://registry.docker.io"], "mtu": 1460, "experimental": true}' >> /etc/docker/daemon.json
 
-cat /etc/docker/daemon.json
+cat ~/.docker/config.json
 
 sudo systemctl restart docker
 
