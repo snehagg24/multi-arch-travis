@@ -11,7 +11,7 @@ jobs:
    - stage: building x86_64 image
      arch: amd64
      script: chmod +x ./build.sh; ./build.sh
-   - stage: building ppc64le iamge
+   - stage: building ppc64le image
      arch: ppc64le
      script: chmod +x ./build.sh; ./build.sh
    - stage: building multi-arch image
@@ -19,7 +19,7 @@ jobs:
      script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
    - stage: run x86_64 image
      arch: amd64
-     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm multi-arch-travis:latest
+     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
    - stage: run ppc64le image
      arch: ppc64le
-     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm multi-arch-travis:latest
+     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
