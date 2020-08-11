@@ -2,6 +2,8 @@ language: bash
 
 services: docker
 
+dist: bionic
+
 jobs:
   include:
    - os: linux
@@ -10,6 +12,6 @@ jobs:
    - os: linux
      arch: ppc64le
      script: docker build -t container/ppc64le -f ./ppc64le/Dockerfile .
-   - os: linux
-     arch: s390x
-     script: docker build -t container/s390x -f ./s390x/Dockerfile .
+   #- os: linux
+   #  arch: s390x
+   #  script: docker build -t container/s390x -f ./s390x/Dockerfile .
