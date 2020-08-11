@@ -1,14 +1,18 @@
 language: bash
 
+os: linux
+
 services: docker
 
 dist: bionic
 
 jobs:
   include:
-   - os: linux
+   - stage: building x86_64
      arch: amd64
      script: chmod +x ./build.sh; ./build.sh
-   - os: linux
+   - stage: building ppc64le
      arch: ppc64le
      script: chmod +x ./build.sh; ./build.sh
+   - stage: building multi-arch
+     script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
