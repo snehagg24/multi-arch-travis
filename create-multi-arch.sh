@@ -1,8 +1,8 @@
 #!/bin/bash
 
-> /etc/docker/daemon.json
+sudo > /etc/docker/daemon.json
 sudo echo '{"storage-driver": "overlay2", "registry-mirrors": ["https://registry.docker.io"], "mtu": 1460, "experimental": true}' >> /etc/docker/daemon.json
-cat /etc/docker/daemon.json
+sudo cat /etc/docker/daemon.json
 sudo systemctl restart docker
 
 docker manifest create travis/multi-arch-image:latest \
