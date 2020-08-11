@@ -10,9 +10,10 @@ name: multi-arch build
 
 jobs:
   include:
-   - arch: amd64
-   - arch: ppc64le
-   script: chmod +x ./build.sh; ./build.sh
-   stage: building multi-arch using ppc64le as host
+  - arch: amd64
+    script: chmod +x ./build.sh; ./build.sh
+  - arch: ppc64le
+    script: chmod +x ./build.sh; ./build.sh
+  stage: building multi-arch using ppc64le as host
     arch: ppc64le
     script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
