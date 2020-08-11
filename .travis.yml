@@ -9,14 +9,14 @@ jobs:
    - os: linux
      arch: amd64
      script: docker build -t container/amd64 -f ./x86_64/Dockerfile .
-     script: docker login quay.io -u $USER -p $TOKEN
+     script: docker login quay.io -u "$USER" -p $TOKEN
      script: docker tag container/amd64 quay.io/rpsene/multi-arch-travis:amd64
      script: docker images
      script: docker push quay.io/rpsene/multi-arch-travis:amd64
    - os: linux
      arch: ppc64le
      script: docker build -t container/ppc64le -f ./ppc64le/Dockerfile .
-     script: docker login quay.io -u $USER -p $TOKEN
+     script: docker login quay.io -u "$USER" -p $TOKEN
      script: docker tag container/ppc64le quay.io/rpsene/multi-arch-travis:ppc64le
      script: docker images
      script: docker push quay.io/rpsene/multi-arch-travis:ppc64le
