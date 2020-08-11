@@ -6,8 +6,6 @@ services: docker
 
 dist: bionic
 
-name: multi-arch image build
-
 jobs:
   include:
     - name: building images
