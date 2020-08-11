@@ -9,7 +9,7 @@ dist: bionic
 jobs:
   include:
     name: multi-arch image build
-    - arch: amd64
-      script: chmod +x ./build.sh; ./build.sh
-    - arch: ppc64le
-      script: chmod +x ./build.sh; ./build.sh
+      - arch: amd64
+        script: chmod +x ./build.sh; ./build.sh
+      - arch: ppc64le
+        script: chmod +x ./build.sh; ./build.sh
