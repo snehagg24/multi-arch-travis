@@ -10,9 +10,9 @@ jobs:
   include:
    - stage: building x86_64 image
      arch: amd64
-     script: chmod +x ./build.sh; ./build.sh
+      script: chmod +x ./build.sh; ./build.sh
      arch: ppc64le
-     script: chmod +x ./build.sh; ./build.sh
+      script: chmod +x ./build.sh; ./build.sh
    - stage: building multi-arch
      arch: ppc64le
      script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
