@@ -6,7 +6,7 @@ echo '{"storage-driver": "overlay2", "registry-mirrors": ["https://registry.dock
 
 cat /etc/docker/daemon.json
 
-systemctl restart docker
+sudo systemctl restart docker
 
 docker info
 
