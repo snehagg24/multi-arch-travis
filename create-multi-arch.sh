@@ -11,4 +11,4 @@ docker login quay.io -u "$USER" -p $TOKEN
 
 docker images
 
-docker manifest push quay.io/rpsene/multi-arch-image
+docker manifest push quay.io/rpsene/multi-arch-image:latest
