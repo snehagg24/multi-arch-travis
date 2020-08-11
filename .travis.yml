@@ -6,13 +6,15 @@ services: docker
 
 dist: bionic
 
+name: multi-arch build
+
 jobs:
   include:
     stage:
       name: building images
       arch:
         - amd64
-        - pp64le
+        - ppc64le
       script: chmod +x ./build.sh; ./build.sh
     stage: building multi-arch using ppc64le as host
       arch: ppc64le
