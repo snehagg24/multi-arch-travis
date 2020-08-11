@@ -1,14 +1,8 @@
 #!/bin/bash
 
-> /etc/docker/daemon.json
+export DOCKER_CLI_EXPERIMENTAL=enabled
 
-echo '{"storage-driver": "overlay2", "registry-mirrors": ["https://registry.docker.io"], "mtu": 1460, "experimental": true}' >> /etc/docker/daemon.json
-
-cat ~/.docker/config.json
-
-sudo systemctl restart docker
-
-docker info
+docker buildx version
 
 docker manifest create travis/multi-arch-image:latest \
 quay.io/rpsene/multi-arch-travis:x86_64 quay.io/rpsene/multi-arch-travis:ppc64le
