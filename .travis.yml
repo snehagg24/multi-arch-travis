@@ -14,9 +14,6 @@ jobs:
       script: chmod +x ./build.sh; ./build.sh
     - arch: ppc64le
       script: chmod +x ./build.sh; ./build.sh
-
-jobs:
-  include:
     - stage: deploy
       arch: ppc64le
       script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
