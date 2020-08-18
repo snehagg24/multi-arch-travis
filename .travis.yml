@@ -14,7 +14,7 @@ arch: ppc64le
 
 script: 
    - sudo docker run -t centos:latest bash -c 'dnf update -y'
-   - sudo docker run -t ubuntu:18.04 bash -c 'apt update -y'
+   - sudo docker run -t ubuntu:18.04 bash -c 'apt update -y; apt-get upgrade -y'
 
 #jobs:
 #  include:
