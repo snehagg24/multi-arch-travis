@@ -10,7 +10,9 @@ dist: bionic
 
 arch: ppc64le
 
-script: chmod +x ./build.sh; sudo ./build.sh
+#script: chmod +x ./build.sh; sudo ./build.sh
+
+script: sudo docker run -t ubuntu:18.04 bash -c 'apt update -y && apt install -f -y wget'
 
 #jobs:
 #  include:
