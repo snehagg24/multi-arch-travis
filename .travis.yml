@@ -12,7 +12,7 @@ arch: ppc64le
 
 #script: chmod +x ./build.sh; sudo ./build.sh
 
-script: sudo docker run -t centos:latest bash -c 'dnf update -y && dnf install -f -y wget'
+script: sudo docker run -t centos:latest bash -c 'dnf update -y && dnf install -y wget'
 
 #jobs:
 #  include:
