@@ -15,7 +15,7 @@ arch: ppc64le
 script: 
    - sudo cat /sys/module/overlay/parameters/metacopy 
    - sudo docker run -t centos:latest bash -c 'dnf update -y'
-   - sudo docker run -t ubuntu:18.04 bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install'
+   - sudo docker run -t ubuntu:18.04 bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install git'
 
 #jobs:
 #  include:
