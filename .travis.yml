@@ -4,11 +4,13 @@ os: linux
 
 services: docker
 
+sudo: required
+
 dist: bionic
 
 arch: ppc64le
 
-script: chmod +x ./build.sh; ./build.sh
+script: chmod +x ./build.sh; sudo ./build.sh
 
 #jobs:
 #  include:
