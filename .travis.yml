@@ -16,7 +16,8 @@ script:
    - sudo docker run -t centos:latest bash -c 'dnf update -y; dnf install -y git'
    - sudo docker run --rm alpine:latest ls -l
    - sudo docker run --rm fedora:32 bash -c 'dnf update -y; dnf install -y git'
-   - sudo docker run --rm ppc64le:ubuntu:20.04 'apt-get update -y; apt-get install -y git'
+   - sudo docker run --rm ubuntu:latest bash -c 'apt-get update -y; apt-get install -y git'
+   - sudo docker run --rm debian:latest bash -c 'apt-get update -y; apt-get install -y git'
    #- sudo docker run -t ppc64le/debian:latest bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install vim'
 
 #jobs:
