@@ -14,7 +14,7 @@ arch: ppc64le
 
 script: 
    - sudo docker run -t centos:latest bash -c 'dnf update -y; dnf install -y git'
-   - sudo docker run --rm alpine:latest ls -l
+   - sudo docker run --rm alpine:latest 'apk add git'
    - sudo docker run --rm fedora:32 bash -c 'dnf update -y; dnf install -y git'
    - sudo docker run --rm ubuntu:latest bash -c 'apt-get update -y; apt-get install -y git'
    - sudo docker run --rm debian:latest bash -c 'apt-get update -y; apt-get install -y git'
