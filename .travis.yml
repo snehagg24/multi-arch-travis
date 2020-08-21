@@ -14,7 +14,8 @@ arch: ppc64le
 
 script: 
    - sudo docker run -t centos:latest bash -c 'dnf update -y'
-   - sudo docker run -t ppc64le/debian:latest bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install vim'
+   - sudo docker run --rm alpine:latest ls -l
+   #- sudo docker run -t ppc64le/debian:latest bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install vim'
 
 #jobs:
 #  include:
