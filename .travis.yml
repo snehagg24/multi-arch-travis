@@ -4,13 +4,13 @@ os: linux
 
 services: docker
 
-sudo: required
+#sudo: required
 
 dist: bionic
 
-arch: ppc64le
+#arch: ppc64le
 
-script: chmod +x ./build.sh; sudo ./build.sh
+#script: chmod +x ./build.sh; sudo ./build.sh
 
 #script: 
    #- sudo docker run -t centos:latest bash -c 'dnf update -y; dnf install -y git'
@@ -20,20 +20,20 @@ script: chmod +x ./build.sh; sudo ./build.sh
    #- sudo docker run --rm debian:latest bash -c 'apt-get update -y; apt-get install -y git'
    #- sudo docker run -t ppc64le/debian:latest bash -c 'cat /sys/module/overlay/parameters/metacopy; apt update -y; apt-get upgrade -y; apt-get -f install vim'
 
-#jobs:
-#  include:
-#   - stage: building ppc64le image
-#     arch: ppc64le
-#     script: chmod +x ./build.sh; ./build.sh
-   #- stage: building x86_64 image
-   #  arch: amd64
-   #  script: chmod +x ./build.sh; ./build.sh
-  # - stage: building multi-arch image
-   #  arch: ppc64le
-   #  script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
-   #- stage: run x86_64 image
-   #  arch: amd64
-   #  script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
-   #- stage: run ppc64le image
-   #  arch: ppc64le
-   #  script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
+jobs:
+  include:
+   - stage: building ppc64le image
+     arch: ppc64le
+     script: chmod +x ./build.sh; ./build.sh
+   - stage: building x86_64 image
+     arch: amd64
+     script: chmod +x ./build.sh; ./build.sh
+   - stage: building multi-arch image
+     arch: ppc64le
+     script: chmod +x ./create-multi-arch.sh; ./create-multi-arch.sh
+   - stage: run x86_64 image
+     arch: amd64
+     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
+   - stage: run ppc64le image
+     arch: ppc64le
+     script: docker pull quay.io/rpsene/multi-arch-travis:latest; docker run --rm quay.io/rpsene/multi-arch-travis:latest
